@@ -1,10 +1,18 @@
 // pages/api/user.js
 export default function handler(req, res) {
-  if (req.method === 'GET') {
-    // 例: ユーザー情報を返す
-    res.status(200).json({ name: 'John Doe', age: 30 });
+  if (req.method === 'POST') {
+    // クライアントから送られたデータを受け取る
+    const { name, age } = req.body;
+
+    // 簡単なバリデーション
+    if (!name || !age) {
+      res.status(400).json({ message: 'Invalid input' });
+      return;
+    }
+
+    // 成功レスポンス
+    res.status(200).json({ message: `User ${name} aged ${age} created!` });
   } else {
-    // GETリクエスト以外は許可しない
     res.status(405).json({ message: 'Method not allowed' });
   }
 }
