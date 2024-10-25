@@ -1,19 +1,22 @@
-import Head from "next/head";
-import Image from "next/image";
-import localFont from "next/font/local";
-import styles from "@/styles/Home.module.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// pages/index.js
+import Link from 'next/link';
 
 export default function Home() {
-  return <h1>ホームページです</h1>;
+  return (
+    <div>
+      <h1>ホームページ</h1>
+      <ul>
+        <li>
+          <Link href="/posts/1">
+            ポスト1へ
+          </Link>
+        </li>
+        <li>
+          <Link href="/posts/2">
+            ポスト2へ
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
