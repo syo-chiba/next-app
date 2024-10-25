@@ -5,9 +5,18 @@ export default function Home() {
   return (
     <div>
       <h1>ホームページ</h1>
-      <Link href="/about">
-        私たちについて
-      </Link>
+      <ul>
+        <li>
+          <Link href="/posts/1">
+            ポスト1へ
+          </Link>
+        </li>
+        <li>
+          <Link href="/posts/2">
+            ポスト2へ
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }
